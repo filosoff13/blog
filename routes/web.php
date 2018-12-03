@@ -26,9 +26,9 @@ Route::get('/test', function() {
 /** Articles*/
 Route::get('news/create', 'Pagination@create');
 
-Route::get('news/show/{id}', 'Pagination@show');
+Route::get('news/show/{id}', 'Pagination@show')->name('artShow');
 
-Route::get('news/edit/{id}', 'Pagination@edit');
+Route::get('news/edit/{id}', 'Pagination@edit')->name('artEdit');
 
 Route::delete('news/delete', 'Pagination@delete')->name('artDel');
 
@@ -44,3 +44,7 @@ Route::get('categories/add', 'Categories@add');
 Route::get('categories/edit/{id}', 'Categories@edit');
 
 Route::delete('categories/delete', 'Categories@delete')->name('catDet');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

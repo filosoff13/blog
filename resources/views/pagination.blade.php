@@ -40,6 +40,18 @@
                     {{ csrf_field() }}
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form></td>
+            <td><form action="{{ route('artShow', ['news'=> $n->id]) }}" method="post">
+                    {{--<input type="hidden" name="_method" value="DELETE">--}}
+{{--                    {{ method_field('DELETE') }}--}}
+                    {{ csrf_field() }}
+                    <button type="submit" class="btn btn-primary">View</button>
+                </form></td>
+            <td><form action="{{ route('artEdit', ['news'=> $n->id]) }}" method="post">
+                    {{--<input type="hidden" name="_method" value="DELETE">--}}
+                    {{--                    {{ method_field('DELETE') }}--}}
+                    {{ csrf_field() }}
+                    <button type="submit" class="">Edit</button>
+                </form></td>
         </tr>
     @endforeach
 
