@@ -119,7 +119,7 @@ class Pagination extends Controller
     return view('pagination', ['news' => $news]);
   }
 
-  public function delete(Request $request){
+  public function delete(Request $request, $id){
 //    dump($id);
     $id_tmp = DB::table('new_table')->where('id', $id)->first();
     $id_tmp->delete();
